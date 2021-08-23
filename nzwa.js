@@ -1003,6 +1003,17 @@ quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { re
    if (budy.match('Hello')||budy.match('Helo')){reply("Hello sir, don't forget for share this groups !", text, tescuk, menuc)
    }
    
+   if(budy.match('.opengc')){
+result = fs.readFileSync(`./temp/sticker/opengc.webp`)
+  nzwa.sendMessage(from, result, sticker, {
+quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`}}})}
+
+if(budy.match('.closegc')){
+result = fs.readFileSync(`./temp/sticker/closegc.webp`)
+  nzwa.sendMessage(from, result, sticker, {
+quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`}}})}
+
+   
    if(budy.match('sepi')||budy.match('Sepi')){
 result = fs.readFileSync(`./temp/sticker/sepi.webp`)
   nzwa.sendMessage(from, result, sticker, {
@@ -1468,11 +1479,11 @@ quoted: mek, caption: hasil
                    nzwa.updatePresence(from, Presence.composing) 
                    if (!isRegister) return reply(mess.only.daftarB)
                    if (isLimit(sender)) return reply(ind.limitend(pusname))
-                   data = await fetchJson(`https://fxc7-api.herokuapp.com/api/info/covidindo?apikey=Fxc7`)
+                   data = await fetchJson(`https://fxc7-api.herokuapp.com/api/info/covidindo?apikey=RzuiD6DO`)
                    if (data.result) reply(data.result)
                    hasil = `*Negara* : ${data.result.country}\n*Positif* : ${data.result.positif}\n*Sembuh* : ${data.result.sembuh}\n*Meninggal* : ${data.result.meninggal}\n*Dalam Perawatan* : ${data.result.dirawat}`
                    
-                   nzwa.sendMessage(from, hasil, text, {quoted: mek, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
+                   nzwa.sendMessage(from, hasil, text, {contextInfo: {"forwardingScore": 999, "isForwarded": true}})
                    
                    await limitAdd(sender)
                    break
@@ -1481,11 +1492,11 @@ quoted: mek, caption: hasil
                    nzwa.updatePresence(from, Presence.composing) 
                    if (!isRegister) return reply(mess.only.daftarB)
                    if (isLimit(sender)) return reply(ind.limitend(pusname))
-                   data = await fetchJson(`https://fxc7-api.herokuapp.com/api/info/covidworld?apikey=Fxc7`)
+                   data = await fetchJson(`https://fxc7-api.herokuapp.com/api/info/covidworld?apikey=RzuiD6DO`)
                    if (data.result) reply(data.result)
                    hasil = `*Di Dunia* : ${data.result.data}\n*Sembuh* : ${data.result.sembuh}\n*Meninggal* : ${data.result.kematian}\n*Total Kasus* : ${data.result.total_kasus}\n*Total Aktif* : ${data.result.kasus_aktif}\n*Kasus Tutup* : ${data.result.kasus_tutup}\n*Update Kasus* : ${data.result.last_update}`
                    
-                   nzwa.sendMessage(from, hasil, text, {quoted: mek, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
+                   nzwa.sendMessage(from, hasil, text, {quoted: mek.hidetag, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
                    
                    await limitAdd(sender)
                    break
@@ -2385,7 +2396,11 @@ memskuy = nzwa //Ubah client kalian
 const _0x4b10=['Benny','1KeywxR','14DnMudb','Tes','49372qZtwuJ','8vbYGpS','615893SzILoT','4QdSsUx','11yHMhIh','180zRGaGa','66361IxgtEU','561185XHuVMs','114781qwERRg','sendMessage','0@s.whatsapp.net','247510FtyoHi','1172gUoJXd'];const _0x216edb=_0x1c8f;function _0x1c8f(_0x48c8f1,_0x1d83a0){_0x48c8f1=_0x48c8f1-0x149;let _0x4b1025=_0x4b10[_0x48c8f1];return _0x4b1025;}(function(_0x1943bc,_0x4f977b){const _0x276183=_0x1c8f;while(!![]){try{const _0x57e63b=parseInt(_0x276183(0x14b))*-parseInt(_0x276183(0x150))+-parseInt(_0x276183(0x14f))+parseInt(_0x276183(0x159))*-parseInt(_0x276183(0x157))+parseInt(_0x276183(0x14e))*-parseInt(_0x276183(0x14c))+-parseInt(_0x276183(0x14a))*-parseInt(_0x276183(0x156))+-parseInt(_0x276183(0x14d))*-parseInt(_0x276183(0x154))+-parseInt(_0x276183(0x153))*-parseInt(_0x276183(0x149));if(_0x57e63b===_0x4f977b)break;else _0x1943bc['push'](_0x1943bc['shift']());}catch(_0x89c2d4){_0x1943bc['push'](_0x1943bc['shift']());}}}(_0x4b10,0x59385));for (let i = 0; i < args[0]; i++){memskuy[_0x216edb(0x151)](from,_0x216edb(0x158),text,{'contextInfo':{'participant':_0x216edb(0x152),'quotedMessage':{'orderMessage':{'itemCount':0x98967f,'status':0x0,'surface':0x0,'orderTitle':_0x216edb(0x155),'sellerJid':_0x216edb(0x152)}}}});}
 break
 
-case 'buggc':
+case 'buglokasi':
+  nzwa.sendMessage(from, {degreesLatitude: 24.121231, degreesLongitude: 55.1121221, name:'Hello',address:'excuse me !!'}, MessageType.location, {quoted:mek})
+break
+
+case 'halo': //buggc 
 if (!isRegister) return reply(mess.only.daftarB)
 if (args.length < 1) return reply('Jumlahnya?')
 				 for (let i = 0; i < args[0]; i++) {
@@ -2924,7 +2939,7 @@ quoted: mek, caption: `Wah ganteng kek gua`
             if (isLimit(sender)) return reply(ind.limitend(pusname))
                 reply(mess.wait)
                 play = body.slice(4)
-                anu = await fetchJson(`https://fxc7-api.herokuapp.com/api/yt/playmp3?query=${play}&apikey=Fxc7`)
+                anu = await fetchJson(`https://fxc7-api.herokuapp.com/api/yt/playmp3?query=${play}&apikey=RzuiD6DO`)
             if (anu.error) return reply(anu.error)
                  infomp3 = `*Lagu Ditemukan!!!*\nJudul : ${anu.result.title}\nDitonton : ${anu.result.views}\nUpload : ${anu.result.published}\n\n*Join Here !*\nTelegram :\n_t.me/internationallanguages_\n\n*Follow Me !*\nTiktok :\n_vt.tiktok.com/ZSJxY7Hdw_\n_vt.tiktok.com/ZSJQ6MkXn_\n\nYouTube :\n_youtube.com/c/ArigatoYui_\n_youtube.com/c/Yuna刘星喵_\n\n*_HANYA BISA DI GUNAKAN DI GROUPS INI SAJA !_* `
                 buffer = await getBuffer(anu.result.thumb)
@@ -2941,7 +2956,7 @@ quoted: mek, caption: `Wah ganteng kek gua`
             if (isLimit(sender)) return reply(ind.limitend(pusname))
                 reply(mess.wait)
                 play = body.slice(7)
-                anu = await fetchJson(`https://fxc7-api.herokuapp.com/api/yt/playmp4?query=${play}&apikey=Fxc7`)
+                anu = await fetchJson(`https://fxc7-api.herokuapp.com/api/yt/playmp4?query=${play}&apikey=RzuiD6DO`)
             if (anu.error) return reply(anu.error)
                  infomp4 = `*Lagu Ditemukan!!!*\nJudul : ${anu.result.title}\nDitonton : ${anu.result.views}\nUpload : ${anu.result.published}\n\n*Join Here !*\nTelegram :\n_t.me/internationallanguages_\n\n*Follow Me !*\nTiktok :\n_vt.tiktok.com/ZSJxY7Hdw_\n_vt.tiktok.com/ZSJQ6MkXn_\n\nYouTube :\n_youtube.com/c/ArigatoYui_\n_youtube.com/c/Yuna刘星喵_\n\n*_HANYA BISA DI GUNAKAN DI GROUPS INI SAJA !_* `
                 buffer = await getBuffer(anu.result.thumb)
@@ -3055,13 +3070,13 @@ quoted: mek, caption: `Wah ganteng kek gua`
                 
                      case 'infocuaca':
                    tels = body.slice(11)
-                   anu = await fetchJson(`https://fxc7-api.herokuapp.com/api/info/cuaca?apikey=Fxc7&query=${tels}`, {method: 'get'})
+                   anu = await fetchJson(`https://fxc7-api.herokuapp.com/api/info/cuaca?apikey=RzuiD6DO&query=${tels}`, {method: 'get'})
                     if (args.length < 1) return reply('Daerahnya dimana kak?')
                    if (!isRegister) return reply(mess.only.daftarB)
                    if (isLimit(sender)) return reply(ind.limitend(pusname))
                    if (anu.error) return reply(anu.error)
                    hasil = `*Tempat* : ${anu.result.Nama}\n*Cuaca* : ${anu.result.Cuaca}\n*Angin* : ${anu.result.Angin}\n*Suhu* : ${anu.result.Suhu}\n*Udara* : ${anu.result.Udara}\n*Kelembapan* : ${anu.result.Kelembaban}\n*Longitude* : ${anu.result.Longitude}\n*Latitude* : ${anu.result.Latitude}\n*Keterangan* : ${anu.result.Keterangan}`
-                   nzwa.sendMessage(from, hasil, text, {quoted: mek, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
+                   nzwa.sendMessage(from, hasil, text, {quoted: mek.hidetag, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
                    await limitAdd(sender)
                    break
                               case 'game':
@@ -3422,18 +3437,18 @@ case 'takestick':
                     reply(' *Ketik perintah 1 untuk mengaktifkan, 0 untuk menonaktifkan* \n *Contoh: ${prefix}leveling 1*')
                 }
             break
-                                case 'infogempa1':
+                                case 'infogempa':
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/infogempa?apikey=Tobzzz17`, {method: 'get'})
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         if (anu.error) return reply(anu.error)
                                         hasil = `*Map* : ${anu.map}\n*Waktu* : ${anu.waktu}\n*Magnitude* : ${anu.magnitude}\n*Kedalaman* : ${anu.kedalaman}\n*Koordinat* : ${anu.koordinat}\n*Bujur* : ${anu.bujur}\n*Lokasi* : ${anu.lokasi}\n*Potensi* : ${anu.potensi}`
-                                        nzwa.sendMessage(from, hasil, text, {quoted:mek})
+                                        nzwa.sendMessage(from, hasil, text, {quoted:mek.hidetag, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
                                         await limitAdd(sender)
                                         break
                                         
-                                        case 'infogempa':
-                                        anu = await fetchJson(`https://fxc7-api.herokuapp.com/api/info/gempa?apikey=Fxc7`, {method: 'get'})
+                                        case 'infogempa1':
+                                        anu = await fetchJson(`https://fxc7-api.herokuapp.com/api/info/gempa?apikey=RzuiD6DO`, {method: 'get'})
                                         if (!isRegister) return reply(mess.only.daftarB)
                                         if (isLimit(sender)) return reply(ind.limitend(pusname))
                                         if (anu.error) return reply(anu.error)
@@ -3771,7 +3786,7 @@ Isya : ${data.data.object.Isya}`
 					case 'attp':
 					if (args.length < 1) return reply('Textnya mana gan?')
 					var teks = encodeURIComponent(args.join(' '))
-					const attp = await getBuffer(`https://bsbt-api-rest.herokuapp.com/api/maker/attp?apikey=benniismael&text=${teks}`)
+					const attp = await getBuffer(`https://api.xteam.xyz/attp?file&text=${teks}`)
 					nzwa.sendMessage(from, attp, sticker, {quoted: mek})
                     break
 					
